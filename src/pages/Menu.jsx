@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Menu() {
   const [activeFilter, setActiveFilter] = useState('semua')
@@ -13,175 +14,26 @@ function Menu() {
   ]
 
   const menuItems = [
-    // Teh Original Series
-    {
-      category: 'original',
-      name: 'Teh Santai Original',
-      price: 5000,
-      desc: 'Teh manis klasik, simple is the best. The OG yang never fails!',
-      emoji: '🍵',
-      bestseller: true,
-    },
-    {
-      category: 'original',
-      name: 'Teh Santai Less Sugar',
-      price: 5000,
-      desc: 'Sama enaknya, less guilty. Buat yang lagi jaga gula.',
-      emoji: '🍵',
-      bestseller: false,
-    },
-    {
-      category: 'original',
-      name: 'Teh Tawar',
-      price: 4000,
-      desc: 'For the purist. Zero sugar, pure tea goodness.',
-      emoji: '🍵',
-      bestseller: false,
-    },
-
-    // Teh Buah Series
-    {
-      category: 'buah',
-      name: 'Teh Lemon',
-      price: 8000,
-      desc: 'Seger dengan perasan lemon asli. Perfect for hot days!',
-      emoji: '🍋',
-      bestseller: true,
-    },
-    {
-      category: 'buah',
-      name: 'Teh Lychee',
-      price: 10000,
-      desc: 'Sweet & fruity, favorit para cewek. Manis alami dari lychee.',
-      emoji: '🍒',
-      bestseller: true,
-    },
-    {
-      category: 'buah',
-      name: 'Teh Passion Fruit',
-      price: 10000,
-      desc: 'Asam manis tropical vibes. Bikin refresh seketika!',
-      emoji: '🥭',
-      bestseller: false,
-    },
-    {
-      category: 'buah',
-      name: 'Teh Peach',
-      price: 10000,
-      desc: 'Peachy keen! Aroma peach yang harum dan segar.',
-      emoji: '🍑',
-      bestseller: false,
-    },
-    {
-      category: 'buah',
-      name: 'Teh Mango',
-      price: 12000,
-      desc: 'Mangga harum manis. Rasa tropis yang ngangenin!',
-      emoji: '🥭',
-      bestseller: false,
-    },
-
-    // Teh Susu Series
-    {
-      category: 'susu',
-      name: 'Teh Susu',
-      price: 10000,
-      desc: 'Creamy classic. Teh bertemu susu, combination yang perfect.',
-      emoji: '🥛',
-      bestseller: false,
-    },
-    {
-      category: 'susu',
-      name: 'Thai Tea',
-      price: 12000,
-      desc: 'Creamy orange tea yang bikin nagih. Our best seller!',
-      emoji: '🧋',
-      bestseller: true,
-    },
-    {
-      category: 'susu',
-      name: 'Teh Susu Coklat',
-      price: 12000,
-      desc: 'Double comfort. Teh, susu, dan coklat dalam satu cup.',
-      emoji: '🍫',
-      bestseller: false,
-    },
-    {
-      category: 'susu',
-      name: 'Matcha Latte',
-      price: 15000,
-      desc: 'Green tea lover wajib coba! Matcha premium dari Jepang.',
-      emoji: '🍵',
-      bestseller: false,
-    },
-    {
-      category: 'susu',
-      name: 'Taro Latte',
-      price: 15000,
-      desc: 'Purple vibes! Creamy taro yang lembut dan manis.',
-      emoji: '🍠',
-      bestseller: false,
-    },
-
-    // Teh Cheese Series
-    {
-      category: 'cheese',
-      name: 'Teh Original Cheese',
-      price: 15000,
-      desc: 'Cheese foam yang creamy di atas teh original. Salty-sweet combo!',
-      emoji: '🧀',
-      bestseller: false,
-    },
-    {
-      category: 'cheese',
-      name: 'Thai Tea Cheese',
-      price: 18000,
-      desc: 'Best combo ever! Thai tea + cheese foam = heaven.',
-      emoji: '🧀',
-      bestseller: true,
-    },
-    {
-      category: 'cheese',
-      name: 'Matcha Cheese',
-      price: 18000,
-      desc: 'Matcha meets cheese. Unik dan bikin ketagihan!',
-      emoji: '🧀',
-      bestseller: false,
-    },
-
-    // Snacks
-    {
-      category: 'snacks',
-      name: 'Roti Bakar',
-      price: 12000,
-      desc: 'Roti bakar dengan berbagai topping. Perfect companion!',
-      emoji: '🍞',
-      bestseller: false,
-    },
-    {
-      category: 'snacks',
-      name: 'Cireng',
-      price: 8000,
-      desc: 'Aci digoreng crispy dengan bumbu rujak. Yummy!',
-      emoji: '🥟',
-      bestseller: false,
-    },
-    {
-      category: 'snacks',
-      name: 'Kentang Goreng',
-      price: 15000,
-      desc: 'French fries crispy dengan saus pilihan. Classic snack!',
-      emoji: '🍟',
-      bestseller: false,
-    },
-    {
-      category: 'snacks',
-      name: 'Pisang Goreng',
-      price: 10000,
-      desc: 'Pisang goreng crispy dengan topping coklat atau keju.',
-      emoji: '🍌',
-      bestseller: false,
-    },
+    { category: 'original', name: 'Teh Santai Original', price: 5000, desc: 'Teh manis klasik, simple is the best.', emoji: '🍵', bestseller: true },
+    { category: 'original', name: 'Teh Santai Less Sugar', price: 5000, desc: 'Sama enaknya, less guilty.', emoji: '🍵', bestseller: false },
+    { category: 'original', name: 'Teh Tawar', price: 4000, desc: 'For the purist. Zero sugar.', emoji: '🍵', bestseller: false },
+    { category: 'buah', name: 'Teh Lemon', price: 8000, desc: 'Seger dengan perasan lemon asli.', emoji: '🍋', bestseller: true },
+    { category: 'buah', name: 'Teh Lychee', price: 10000, desc: 'Sweet & fruity, favorit para cewek.', emoji: '🍒', bestseller: true },
+    { category: 'buah', name: 'Teh Passion Fruit', price: 10000, desc: 'Asam manis tropical vibes.', emoji: '🥭', bestseller: false },
+    { category: 'buah', name: 'Teh Peach', price: 10000, desc: 'Peachy keen! Aroma segar.', emoji: '🍑', bestseller: false },
+    { category: 'buah', name: 'Teh Mango', price: 12000, desc: 'Mangga harum manis tropis.', emoji: '🥭', bestseller: false },
+    { category: 'susu', name: 'Teh Susu', price: 10000, desc: 'Creamy classic combination.', emoji: '🥛', bestseller: false },
+    { category: 'susu', name: 'Thai Tea', price: 12000, desc: 'Creamy orange tea yang nagih!', emoji: '🧋', bestseller: true },
+    { category: 'susu', name: 'Teh Susu Coklat', price: 12000, desc: 'Double comfort dalam satu cup.', emoji: '🍫', bestseller: false },
+    { category: 'susu', name: 'Matcha Latte', price: 15000, desc: 'Green tea lover wajib coba!', emoji: '🍵', bestseller: false },
+    { category: 'susu', name: 'Taro Latte', price: 15000, desc: 'Purple vibes! Creamy & lembut.', emoji: '🍠', bestseller: false },
+    { category: 'cheese', name: 'Teh Original Cheese', price: 15000, desc: 'Cheese foam creamy di atas teh.', emoji: '🧀', bestseller: false },
+    { category: 'cheese', name: 'Thai Tea Cheese', price: 18000, desc: 'Best combo! Thai tea + cheese foam.', emoji: '🧀', bestseller: true },
+    { category: 'cheese', name: 'Matcha Cheese', price: 18000, desc: 'Matcha meets cheese, unik!', emoji: '🧀', bestseller: false },
+    { category: 'snacks', name: 'Roti Bakar', price: 12000, desc: 'Roti bakar berbagai topping.', emoji: '🍞', bestseller: false },
+    { category: 'snacks', name: 'Cireng', price: 8000, desc: 'Aci goreng crispy + bumbu rujak.', emoji: '🥟', bestseller: false },
+    { category: 'snacks', name: 'Kentang Goreng', price: 15000, desc: 'French fries crispy classic.', emoji: '🍟', bestseller: false },
+    { category: 'snacks', name: 'Pisang Goreng', price: 10000, desc: 'Pisang crispy + topping coklat.', emoji: '🍌', bestseller: false },
   ]
 
   const filteredItems = activeFilter === 'semua'
@@ -196,20 +48,26 @@ function Menu() {
     }).format(price)
   }
 
+  const categories = [
+    { id: 'original', title: 'Teh Original Series', emoji: '☕' },
+    { id: 'buah', title: 'Teh Buah Series', emoji: '🍊' },
+    { id: 'susu', title: 'Teh Susu Series', emoji: '🥛' },
+    { id: 'cheese', title: 'Teh Cheese Series', emoji: '🧀' },
+    { id: 'snacks', title: 'Snack Partners', emoji: '🍟' },
+  ]
+
   return (
-    <div className="overflow-hidden">
+    <div>
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-br from-warm-cream via-sunny-yellow-light/30 to-warm-cream overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-10 text-6xl animate-float opacity-20">🧋</div>
-          <div className="absolute bottom-10 left-10 text-5xl animate-bounce-slow opacity-20">🍵</div>
-          <div className="absolute top-1/2 left-1/4 text-4xl animate-float opacity-10">🍊</div>
+      <section className="relative py-12 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-10 text-6xl opacity-10 animate-float">🧋</div>
+          <div className="absolute bottom-10 left-10 text-5xl opacity-10 animate-bounce-slow">🍵</div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-5xl md:text-6xl mb-4 animate-bounce-slow">🧋</div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Menu <span className="text-tea-orange">Teh Santai</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -219,14 +77,14 @@ function Menu() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="sticky top-16 md:top-20 z-40 bg-white shadow-md">
+      <section className="sticky top-16 lg:top-20 z-40 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto py-4 space-x-2 scrollbar-hide">
+          <div className="flex overflow-x-auto py-4 gap-2 scrollbar-hide">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`flex-shrink-0 px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 flex items-center space-x-2
+                className={`flex-shrink-0 px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 flex items-center gap-2
                   ${activeFilter === filter.id
                     ? 'bg-tea-orange text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -241,75 +99,23 @@ function Menu() {
       </section>
 
       {/* Menu Grid */}
-      <section className="py-12 md:py-16 bg-warm-cream">
+      <section className="py-12 md:py-16 bg-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Headers */}
           {activeFilter === 'semua' ? (
             <>
-              {/* Original Series */}
-              <div className="mb-12">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                  <span>☕</span>
-                  <span>Teh Original Series</span>
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {menuItems.filter(item => item.category === 'original').map((item, index) => (
-                    <MenuCard key={index} item={item} formatPrice={formatPrice} />
-                  ))}
+              {categories.map((cat) => (
+                <div key={cat.id} className="mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <span className="text-3xl">{cat.emoji}</span>
+                    <span>{cat.title}</span>
+                  </h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    {menuItems.filter(item => item.category === cat.id).map((item, index) => (
+                      <MenuCard key={index} item={item} formatPrice={formatPrice} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* Buah Series */}
-              <div className="mb-12">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                  <span>🍊</span>
-                  <span>Teh Buah Series</span>
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {menuItems.filter(item => item.category === 'buah').map((item, index) => (
-                    <MenuCard key={index} item={item} formatPrice={formatPrice} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Susu Series */}
-              <div className="mb-12">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                  <span>🥛</span>
-                  <span>Teh Susu Series</span>
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {menuItems.filter(item => item.category === 'susu').map((item, index) => (
-                    <MenuCard key={index} item={item} formatPrice={formatPrice} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Cheese Series */}
-              <div className="mb-12">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                  <span>🧀</span>
-                  <span>Teh Cheese Series</span>
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {menuItems.filter(item => item.category === 'cheese').map((item, index) => (
-                    <MenuCard key={index} item={item} formatPrice={formatPrice} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Snacks */}
-              <div>
-                <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                  <span>🍟</span>
-                  <span>Snack Partners</span>
-                </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {menuItems.filter(item => item.category === 'snacks').map((item, index) => (
-                    <MenuCard key={index} item={item} formatPrice={formatPrice} />
-                  ))}
-                </div>
-              </div>
+              ))}
             </>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -324,25 +130,23 @@ function Menu() {
       {/* Size Guide */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-              Pilihan Ukuran 📏
-            </h2>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+            Pilihan Ukuran 📏
+          </h2>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="bg-warm-cream rounded-2xl p-6 text-center card-hover">
+            <div className="bg-amber-50 rounded-2xl p-6 text-center card-hover">
               <div className="text-5xl mb-4">🥤</div>
-              <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">Regular</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Regular</h3>
               <p className="text-gray-600 mb-2">400ml</p>
               <p className="text-tea-orange font-bold">Harga normal</p>
             </div>
-            <div className="bg-warm-cream rounded-2xl p-6 text-center card-hover border-2 border-tea-orange">
+            <div className="bg-amber-50 rounded-2xl p-6 text-center card-hover border-2 border-tea-orange relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-tea-orange text-white text-xs font-bold px-3 py-1 rounded-full">
                 POPULAR
               </div>
               <div className="text-5xl mb-4">🧋</div>
-              <h3 className="font-heading text-xl font-bold text-gray-900 mb-2">Large</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Large</h3>
               <p className="text-gray-600 mb-2">600ml</p>
               <p className="text-tea-orange font-bold">+Rp 3.000</p>
             </div>
@@ -350,11 +154,11 @@ function Menu() {
         </div>
       </section>
 
-      {/* Customization Note */}
-      <section className="py-12 md:py-16 bg-fresh-green text-white">
+      {/* Customization */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-green-600 to-green-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-5xl mb-4">✨</div>
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Bisa Custom Sesuai Selera!
           </h2>
           <p className="text-white/80 text-lg mb-6">
@@ -374,9 +178,9 @@ function Menu() {
       </section>
 
       {/* Order CTA */}
-      <section className="py-12 md:py-16 bg-warm-cream">
+      <section className="py-12 md:py-16 bg-amber-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Udah pilih? Yuk order! 🛵
           </h2>
           <p className="text-gray-600 mb-8">
@@ -387,18 +191,18 @@ function Menu() {
               href="https://gofood.link/tehsantai"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-fresh-green hover:bg-fresh-green-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-200 btn-hover-scale inline-flex items-center justify-center space-x-2"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 btn-hover-scale inline-flex items-center justify-center gap-2"
             >
               <span>Order GoFood</span>
-              <span className="text-xl">🛵</span>
+              <span>🛵</span>
             </a>
-            <a
-              href="/locations"
-              className="bg-tea-orange hover:bg-tea-orange-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-200 btn-hover-scale inline-flex items-center justify-center space-x-2"
+            <Link
+              to="/locations"
+              className="bg-tea-orange hover:bg-tea-orange-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-200 btn-hover-scale inline-flex items-center justify-center gap-2"
             >
               <span>Cari Outlet</span>
-              <span className="text-xl">📍</span>
-            </a>
+              <span>📍</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -408,17 +212,17 @@ function Menu() {
 
 function MenuCard({ item, formatPrice }) {
   return (
-    <div className="bg-white rounded-2xl p-6 card-hover relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-6 card-hover relative overflow-hidden shadow-sm">
       {item.bestseller && (
         <div className="absolute top-3 right-3 bg-tea-orange text-white text-xs font-bold px-3 py-1 rounded-full">
           🔥 Best Seller
         </div>
       )}
       <div className="text-4xl mb-3">{item.emoji}</div>
-      <h3 className="font-heading text-lg font-bold text-gray-900 mb-1">{item.name}</h3>
+      <h3 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h3>
       <p className="text-gray-600 text-sm mb-3 line-clamp-2">{item.desc}</p>
       <div className="flex items-center justify-between">
-        <span className="font-heading text-xl font-bold text-tea-orange">
+        <span className="text-xl font-bold text-tea-orange">
           {formatPrice(item.price)}
         </span>
         {item.category !== 'snacks' && (
