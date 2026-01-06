@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="teaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EA580C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C2410C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Cup -->
+  <path d="M12 20h32l-4 36H16l-4-36z" fill="url(#teaGrad)"/>
+  <!-- Cup rim -->
+  <ellipse cx="28" cy="20" rx="18" ry="4" fill="#FB923C"/>
+  <!-- Handle -->
+  <path d="M44 26c8 0 12 4 12 10s-4 10-12 10" fill="none" stroke="#EA580C" stroke-width="4" stroke-linecap="round"/>
+  <!-- Steam -->
+  <path d="M20 12c0-4 4-6 4-10" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+  <path d="M28 10c0-4 4-6 4-10" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+  <path d="M36 12c0-4 4-6 4-10" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+  <!-- Leaf -->
+  <ellipse cx="50" cy="12" rx="6" ry="3" fill="#15803D" transform="rotate(-30 50 12)"/>
+</svg>
